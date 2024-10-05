@@ -24,6 +24,10 @@ oauth2Client.setCredentials({
   refresh_token: process.env.REFRESH_TOKEN,
 });
 
+app.get("/",(req,res)=>{
+  res.json({status:"success"});
+})
+
 app.post("/api/sendMail", async (req, res) => {
   const { to, content, subject, cc, attachments } = req.body;
 
